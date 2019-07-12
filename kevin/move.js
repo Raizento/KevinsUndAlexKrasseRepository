@@ -1,4 +1,27 @@
-
+class clickable{
+constructor(el){
+el.addEventListener('mousedown', e => {
+console.log(el.className);
+let textContainers = document.getElementsByClassName('text-container');
+let container = document.querySelector('.container');
+container.style.border = "";
+container.className = container.className.replace(/\bactive\b/g, "");
+for(let i = 0;i<textContainers.length;i++){
+textContainers[i].style.border = "";
+textContainers[i].className= textContainers[i].className.replace(/\bactive\b/g, "");
+}
+el.style.border = "2px solid black";
+let ac = el.className.split(" ");
+  if (ac.indexOf('active') == -1) {
+    el.className += " active";
+}
+if (!e) var  e = window.event;
+    e.cancelBubble = true;
+    if (e.stopPropagation) e.stopPropagation();
+}, false)
+}
+}
+//----------------------------
 function generateRange(min, max){
 	return function(val){
 		return Math.min(Math.max(val, min), max);
