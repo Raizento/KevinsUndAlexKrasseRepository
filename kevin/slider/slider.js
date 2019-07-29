@@ -7,7 +7,9 @@ size_point : 50,
 padding: 0,
 time : .4,
 off_color : '#4EBF5F',
+off_function : null,
 on_color : '#69FF7F',
+on_function : null,
 point_color : '#FFFFFF' 
 }
 }
@@ -25,7 +27,9 @@ if(ocnf.size_point !== undefined){this.cnf.size_point = ocnf.size_point}
 if(ocnf.padding !== undefined){this.cnf.padding = ocnf.padding}
 if(ocnf.time !== undefined){this.cnf.time = ocnf.time}
 if(ocnf.off_color !== undefined){this.cnf.off_color = ocnf.off_color}
+if(ocnf.off_function !== undefined){this.cnf.off_function = ocnf.off_function}
 if(ocnf.on_color !== undefined){this.cnf.on_color = ocnf.on_color}
+if(ocnf.on_function !== undefined){this.cnf.on_function = ocnf.on_function}
 if(ocnf.point_color !== undefined){this.cnf.point_color = ocnf.point_color}
 }
 createSlider(ocnf){
@@ -39,9 +43,15 @@ s.classList.add('slider');
 s.addEventListener('click', e=> {
 if(s.classList.contains('slider-on')){
 s.classList.remove('slider-on');
+if(this.cnf.off_function !== null){
+this.cnf.off_function();
+}
 }
 else{
 s.classList.add('slider-on');
+if(this.cnf.on_function !== null){
+this.cnf.on_function();
+}
 }
 }, false);
 return l;
