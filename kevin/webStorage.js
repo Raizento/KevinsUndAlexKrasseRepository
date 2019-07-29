@@ -41,10 +41,19 @@ class WebStorage {
         }
     }
 
-    remove(key) {
-        sessionStorage.removeItem(key);
-        localStorage.removeItem(key);
+    remove(key, type = null) {
+        if (type === null) {
+            sessionStorage.removeItem(key);
+            localStorage.removeItem(key);
+        } else {
+            if (type === 'session') {
+                sessionStorage.removeItem(key);
+            } else if (type === 'local') {
+                localStorage.removeItem('key');
+            }
+        }
     }
+
     clear(type) {
         if (type === 'session') {
             sessionStorage.clear();
