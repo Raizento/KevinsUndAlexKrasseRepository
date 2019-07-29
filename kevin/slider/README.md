@@ -1,6 +1,6 @@
-#Slider.js
+# Slider.js
 
-##How to use:
+## How to use:
 
 1. Reference Class 
 
@@ -19,7 +19,7 @@ let cnf = {width:100};
 slider.createSlider(cnf);
 ```
 
-##Slider options
+## Slider options
 
 All values are in pixels expect time, wich is in seconds. If you're using colors, treat them as strings.
 
