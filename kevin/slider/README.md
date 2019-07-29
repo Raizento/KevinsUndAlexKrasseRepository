@@ -31,3 +31,5 @@ All values are in pixels expect time, wich is in seconds. If you're using colors
 - off_color -> color when the slide is off (hex,rgb,htmlcolor)
 - on_color -> color when the slide is on (hex,rgb,htmlcolor)
 - point_color -> color of the point (hex,rgb,htmlcolor)
+- off_function -> function to trigger when the slide is off (function)
+- on_function -> function to trigger when the slide is on (function)
